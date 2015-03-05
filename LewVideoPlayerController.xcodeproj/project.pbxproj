@@ -1,0 +1,443 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9F1A6F501AA82E980094291E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1A6F4F1AA82E980094291E /* main.m */; };
+		9F1A6F531AA82E980094291E /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1A6F521AA82E980094291E /* AppDelegate.m */; };
+		9F1A6F561AA82E980094291E /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1A6F551AA82E980094291E /* ViewController.m */; };
+		9F1A6F591AA82E980094291E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F1A6F571AA82E980094291E /* Main.storyboard */; };
+		9F1A6F5B1AA82E980094291E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F1A6F5A1AA82E980094291E /* Images.xcassets */; };
+		9F1A6F5E1AA82E980094291E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F1A6F5C1AA82E980094291E /* LaunchScreen.xib */; };
+		9F1A6F6A1AA82E980094291E /* LewVideoPlayerControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1A6F691AA82E980094291E /* LewVideoPlayerControllerTests.m */; };
+		9F1A6F761AA82F450094291E /* LewVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1A6F751AA82F450094291E /* LewVideoController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9F1A6F641AA82E980094291E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9F1A6F421AA82E980094291E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9F1A6F491AA82E980094291E;
+			remoteInfo = LewVideoPlayerController;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9F1A6F4A1AA82E980094291E /* LewVideoPlayerController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LewVideoPlayerController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F1A6F4E1AA82E980094291E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F1A6F4F1AA82E980094291E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9F1A6F511AA82E980094291E /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		9F1A6F521AA82E980094291E /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		9F1A6F541AA82E980094291E /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		9F1A6F551AA82E980094291E /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		9F1A6F581AA82E980094291E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9F1A6F5A1AA82E980094291E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		9F1A6F5D1AA82E980094291E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		9F1A6F631AA82E980094291E /* LewVideoPlayerControllerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LewVideoPlayerControllerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9F1A6F681AA82E980094291E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F1A6F691AA82E980094291E /* LewVideoPlayerControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LewVideoPlayerControllerTests.m; sourceTree = "<group>"; };
+		9F1A6F741AA82F450094291E /* LewVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LewVideoController.h; sourceTree = "<group>"; };
+		9F1A6F751AA82F450094291E /* LewVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LewVideoController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9F1A6F471AA82E980094291E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F1A6F601AA82E980094291E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9F1A6F411AA82E980094291E = {
+			isa = PBXGroup;
+			children = (
+				9F1A6F731AA82F310094291E /* LewVideoController */,
+				9F1A6F4C1AA82E980094291E /* LewVideoPlayerController */,
+				9F1A6F661AA82E980094291E /* LewVideoPlayerControllerTests */,
+				9F1A6F4B1AA82E980094291E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9F1A6F4B1AA82E980094291E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9F1A6F4A1AA82E980094291E /* LewVideoPlayerController.app */,
+				9F1A6F631AA82E980094291E /* LewVideoPlayerControllerTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9F1A6F4C1AA82E980094291E /* LewVideoPlayerController */ = {
+			isa = PBXGroup;
+			children = (
+				9F1A6F511AA82E980094291E /* AppDelegate.h */,
+				9F1A6F521AA82E980094291E /* AppDelegate.m */,
+				9F1A6F541AA82E980094291E /* ViewController.h */,
+				9F1A6F551AA82E980094291E /* ViewController.m */,
+				9F1A6F571AA82E980094291E /* Main.storyboard */,
+				9F1A6F5A1AA82E980094291E /* Images.xcassets */,
+				9F1A6F5C1AA82E980094291E /* LaunchScreen.xib */,
+				9F1A6F4D1AA82E980094291E /* Supporting Files */,
+			);
+			path = LewVideoPlayerController;
+			sourceTree = "<group>";
+		};
+		9F1A6F4D1AA82E980094291E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9F1A6F4E1AA82E980094291E /* Info.plist */,
+				9F1A6F4F1AA82E980094291E /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9F1A6F661AA82E980094291E /* LewVideoPlayerControllerTests */ = {
+			isa = PBXGroup;
+			children = (
+				9F1A6F691AA82E980094291E /* LewVideoPlayerControllerTests.m */,
+				9F1A6F671AA82E980094291E /* Supporting Files */,
+			);
+			path = LewVideoPlayerControllerTests;
+			sourceTree = "<group>";
+		};
+		9F1A6F671AA82E980094291E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9F1A6F681AA82E980094291E /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9F1A6F731AA82F310094291E /* LewVideoController */ = {
+			isa = PBXGroup;
+			children = (
+				9F1A6F741AA82F450094291E /* LewVideoController.h */,
+				9F1A6F751AA82F450094291E /* LewVideoController.m */,
+			);
+			path = LewVideoController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9F1A6F491AA82E980094291E /* LewVideoPlayerController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F1A6F6D1AA82E980094291E /* Build configuration list for PBXNativeTarget "LewVideoPlayerController" */;
+			buildPhases = (
+				9F1A6F461AA82E980094291E /* Sources */,
+				9F1A6F471AA82E980094291E /* Frameworks */,
+				9F1A6F481AA82E980094291E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LewVideoPlayerController;
+			productName = LewVideoPlayerController;
+			productReference = 9F1A6F4A1AA82E980094291E /* LewVideoPlayerController.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9F1A6F621AA82E980094291E /* LewVideoPlayerControllerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9F1A6F701AA82E980094291E /* Build configuration list for PBXNativeTarget "LewVideoPlayerControllerTests" */;
+			buildPhases = (
+				9F1A6F5F1AA82E980094291E /* Sources */,
+				9F1A6F601AA82E980094291E /* Frameworks */,
+				9F1A6F611AA82E980094291E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9F1A6F651AA82E980094291E /* PBXTargetDependency */,
+			);
+			name = LewVideoPlayerControllerTests;
+			productName = LewVideoPlayerControllerTests;
+			productReference = 9F1A6F631AA82E980094291E /* LewVideoPlayerControllerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9F1A6F421AA82E980094291E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = "独奏";
+				TargetAttributes = {
+					9F1A6F491AA82E980094291E = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+					9F1A6F621AA82E980094291E = {
+						CreatedOnToolsVersion = 6.1.1;
+						TestTargetID = 9F1A6F491AA82E980094291E;
+					};
+				};
+			};
+			buildConfigurationList = 9F1A6F451AA82E980094291E /* Build configuration list for PBXProject "LewVideoPlayerController" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9F1A6F411AA82E980094291E;
+			productRefGroup = 9F1A6F4B1AA82E980094291E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9F1A6F491AA82E980094291E /* LewVideoPlayerController */,
+				9F1A6F621AA82E980094291E /* LewVideoPlayerControllerTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9F1A6F481AA82E980094291E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F1A6F591AA82E980094291E /* Main.storyboard in Resources */,
+				9F1A6F5E1AA82E980094291E /* LaunchScreen.xib in Resources */,
+				9F1A6F5B1AA82E980094291E /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F1A6F611AA82E980094291E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9F1A6F461AA82E980094291E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F1A6F561AA82E980094291E /* ViewController.m in Sources */,
+				9F1A6F531AA82E980094291E /* AppDelegate.m in Sources */,
+				9F1A6F761AA82F450094291E /* LewVideoController.m in Sources */,
+				9F1A6F501AA82E980094291E /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9F1A6F5F1AA82E980094291E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9F1A6F6A1AA82E980094291E /* LewVideoPlayerControllerTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9F1A6F651AA82E980094291E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9F1A6F491AA82E980094291E /* LewVideoPlayerController */;
+			targetProxy = 9F1A6F641AA82E980094291E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9F1A6F571AA82E980094291E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F1A6F581AA82E980094291E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9F1A6F5C1AA82E980094291E /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9F1A6F5D1AA82E980094291E /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9F1A6F6B1AA82E980094291E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9F1A6F6C1AA82E980094291E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9F1A6F6E1AA82E980094291E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LewVideoPlayerController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		9F1A6F6F1AA82E980094291E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = LewVideoPlayerController/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		9F1A6F711AA82E980094291E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LewVideoPlayerControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LewVideoPlayerController.app/LewVideoPlayerController";
+			};
+			name = Debug;
+		};
+		9F1A6F721AA82E980094291E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = LewVideoPlayerControllerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/LewVideoPlayerController.app/LewVideoPlayerController";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9F1A6F451AA82E980094291E /* Build configuration list for PBXProject "LewVideoPlayerController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F1A6F6B1AA82E980094291E /* Debug */,
+				9F1A6F6C1AA82E980094291E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9F1A6F6D1AA82E980094291E /* Build configuration list for PBXNativeTarget "LewVideoPlayerController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F1A6F6E1AA82E980094291E /* Debug */,
+				9F1A6F6F1AA82E980094291E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		9F1A6F701AA82E980094291E /* Build configuration list for PBXNativeTarget "LewVideoPlayerControllerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9F1A6F711AA82E980094291E /* Debug */,
+				9F1A6F721AA82E980094291E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9F1A6F421AA82E980094291E /* Project object */;
+}

@@ -6,18 +6,22 @@
 //  Copyright (c) 2015年 独奏. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
+@protocol LewVideoControllerDelegate <NSObject>
+
+- (void)LewVideoPlayProgress:(CGFloat *)progress;
+
+@end
+
 @interface LewVideoController : NSObject
-@property (nonatomic,strong)AVPlayer *player;
+@property (nonatomic, strong)AVPlayer *player;
+@property (nonatomic, strong)AVPlayerLayer *playerLayer;
 
-@end
+- (instancetype)initWithVideoURL:(NSString *)url;
 
-@interface LewVideoController (LocalView)
-
-@end
-
-@interface LewVideoController (NetVideo)
-
+- (void)play;
+- (void)pause;
+- (void)cancel;
 @end

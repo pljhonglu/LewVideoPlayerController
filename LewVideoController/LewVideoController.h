@@ -11,17 +11,34 @@
 
 @protocol LewVideoControllerDelegate <NSObject>
 
-- (void)LewVideoPlayProgress:(CGFloat *)progress;
 
+- (void)LewVideoPlayingWithCurrentTime:(CMTime)currentTime;
+
+
+- (void)lewVideoReadyToPlay;
+
+- (void)lewVideoLoadedProgress:(CGFloat)progress;
 @end
 
 @interface LewVideoController : NSObject
-@property (nonatomic, strong)AVPlayer *player;
-@property (nonatomic, strong)AVPlayerLayer *playerLayer;
+@property (nonatomic, strong, readonly)AVPlayer *player;
+@property (nonatomic, strong, readonly)AVPlayerLayer *playerLayer;
 
-- (instancetype)initWithVideoURL:(NSString *)url;
+@property (nonatomic, assign, readonly)CMTime videoDuration;
+
+@property (nonatomic, weak) id<LewVideoControllerDelegate> delegate;
+
+- (void)seekToTime:(CMTime)time;
+- (void)seekToTime:(CMTime)time completionHandler:(void (^)(BOOL finished))completionHandler;
+
++ (instancetype)videoControllerWithNetURL:(NSURL *)url;
++ (instancetype)videoControllerWithLocalURLArray:(NSArray *)urlArray;
+//- (instancetype)initWithLocalURL:(NSURL *)url;
+//- (instancetype)initWithLocalURLList:(NSArray *)urlList;
+
 
 - (void)play;
 - (void)pause;
+- (void)replaceWithNewNetURL:(NSURL *)url;
 - (void)cancel;
 @end

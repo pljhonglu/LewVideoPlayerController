@@ -15,6 +15,9 @@
 		9F1A6F5E1AA82E980094291E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9F1A6F5C1AA82E980094291E /* LaunchScreen.xib */; };
 		9F1A6F6A1AA82E980094291E /* LewVideoPlayerControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1A6F691AA82E980094291E /* LewVideoPlayerControllerTests.m */; };
 		9F1A6F761AA82F450094291E /* LewVideoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F1A6F751AA82F450094291E /* LewVideoController.m */; };
+		9F8ECC191AA9AFB8001BBB13 /* 1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9F8ECC161AA9AFB8001BBB13 /* 1.mp4 */; };
+		9F8ECC1A1AA9AFB8001BBB13 /* 2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9F8ECC171AA9AFB8001BBB13 /* 2.mp4 */; };
+		9F8ECC1B1AA9AFB8001BBB13 /* 3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9F8ECC181AA9AFB8001BBB13 /* 3.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +46,9 @@
 		9F1A6F691AA82E980094291E /* LewVideoPlayerControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LewVideoPlayerControllerTests.m; sourceTree = "<group>"; };
 		9F1A6F741AA82F450094291E /* LewVideoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LewVideoController.h; sourceTree = "<group>"; };
 		9F1A6F751AA82F450094291E /* LewVideoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LewVideoController.m; sourceTree = "<group>"; };
+		9F8ECC161AA9AFB8001BBB13 /* 1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4; sourceTree = "<group>"; };
+		9F8ECC171AA9AFB8001BBB13 /* 2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.mp4; sourceTree = "<group>"; };
+		9F8ECC181AA9AFB8001BBB13 /* 3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +91,7 @@
 		9F1A6F4C1AA82E980094291E /* LewVideoPlayerController */ = {
 			isa = PBXGroup;
 			children = (
+				9F8ECC151AA9AFB8001BBB13 /* videos */,
 				9F1A6F511AA82E980094291E /* AppDelegate.h */,
 				9F1A6F521AA82E980094291E /* AppDelegate.m */,
 				9F1A6F541AA82E980094291E /* ViewController.h */,
@@ -130,6 +137,16 @@
 				9F1A6F751AA82F450094291E /* LewVideoController.m */,
 			);
 			path = LewVideoController;
+			sourceTree = "<group>";
+		};
+		9F8ECC151AA9AFB8001BBB13 /* videos */ = {
+			isa = PBXGroup;
+			children = (
+				9F8ECC161AA9AFB8001BBB13 /* 1.mp4 */,
+				9F8ECC171AA9AFB8001BBB13 /* 2.mp4 */,
+				9F8ECC181AA9AFB8001BBB13 /* 3.mp4 */,
+			);
+			path = videos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,7 +229,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9F8ECC1A1AA9AFB8001BBB13 /* 2.mp4 in Resources */,
 				9F1A6F591AA82E980094291E /* Main.storyboard in Resources */,
+				9F8ECC191AA9AFB8001BBB13 /* 1.mp4 in Resources */,
+				9F8ECC1B1AA9AFB8001BBB13 /* 3.mp4 in Resources */,
 				9F1A6F5E1AA82E980094291E /* LaunchScreen.xib in Resources */,
 				9F1A6F5B1AA82E980094291E /* Images.xcassets in Resources */,
 			);
@@ -428,6 +448,7 @@
 				9F1A6F6F1AA82E980094291E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9F1A6F701AA82E980094291E /* Build configuration list for PBXNativeTarget "LewVideoPlayerControllerTests" */ = {
 			isa = XCConfigurationList;
@@ -436,6 +457,7 @@
 				9F1A6F721AA82E980094291E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

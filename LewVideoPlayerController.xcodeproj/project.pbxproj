@@ -18,6 +18,8 @@
 		9F8ECC191AA9AFB8001BBB13 /* 1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9F8ECC161AA9AFB8001BBB13 /* 1.mp4 */; };
 		9F8ECC1A1AA9AFB8001BBB13 /* 2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9F8ECC171AA9AFB8001BBB13 /* 2.mp4 */; };
 		9F8ECC1B1AA9AFB8001BBB13 /* 3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9F8ECC181AA9AFB8001BBB13 /* 3.mp4 */; };
+		9FF01BFB1AAECD7700C27E4C /* LewVideoPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FF01BF91AAECD7700C27E4C /* LewVideoPlayerViewController.m */; };
+		9FF01BFC1AAECD7700C27E4C /* LewVideoPlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FF01BFA1AAECD7700C27E4C /* LewVideoPlayerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,9 @@
 		9F8ECC161AA9AFB8001BBB13 /* 1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4; sourceTree = "<group>"; };
 		9F8ECC171AA9AFB8001BBB13 /* 2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.mp4; sourceTree = "<group>"; };
 		9F8ECC181AA9AFB8001BBB13 /* 3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3.mp4; sourceTree = "<group>"; };
+		9FF01BF81AAECD7700C27E4C /* LewVideoPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LewVideoPlayerViewController.h; sourceTree = "<group>"; };
+		9FF01BF91AAECD7700C27E4C /* LewVideoPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LewVideoPlayerViewController.m; sourceTree = "<group>"; };
+		9FF01BFA1AAECD7700C27E4C /* LewVideoPlayerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LewVideoPlayerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +140,9 @@
 			children = (
 				9F1A6F741AA82F450094291E /* LewVideoController.h */,
 				9F1A6F751AA82F450094291E /* LewVideoController.m */,
+				9FF01BF81AAECD7700C27E4C /* LewVideoPlayerViewController.h */,
+				9FF01BF91AAECD7700C27E4C /* LewVideoPlayerViewController.m */,
+				9FF01BFA1AAECD7700C27E4C /* LewVideoPlayerViewController.xib */,
 			);
 			path = LewVideoController;
 			sourceTree = "<group>";
@@ -234,6 +242,7 @@
 				9F8ECC191AA9AFB8001BBB13 /* 1.mp4 in Resources */,
 				9F8ECC1B1AA9AFB8001BBB13 /* 3.mp4 in Resources */,
 				9F1A6F5E1AA82E980094291E /* LaunchScreen.xib in Resources */,
+				9FF01BFC1AAECD7700C27E4C /* LewVideoPlayerViewController.xib in Resources */,
 				9F1A6F5B1AA82E980094291E /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +263,7 @@
 			files = (
 				9F1A6F561AA82E980094291E /* ViewController.m in Sources */,
 				9F1A6F531AA82E980094291E /* AppDelegate.m in Sources */,
+				9FF01BFB1AAECD7700C27E4C /* LewVideoPlayerViewController.m in Sources */,
 				9F1A6F761AA82F450094291E /* LewVideoController.m in Sources */,
 				9F1A6F501AA82E980094291E /* main.m in Sources */,
 			);

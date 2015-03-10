@@ -18,7 +18,15 @@
 - (void)lewVideoReadyToPlay;
 
 - (void)lewVideoLoadedProgress:(CGFloat)progress;
+
+- (void)lewVideoDidPlayToEnd;
+
 @end
+
+//typedef NS_ENUM(NSUInteger, LewVideoPlayerStatus) {
+//    LewVideoPlayerStatusPause,
+//    LewVideoPlayerStatusPlaying,
+//};
 
 @interface LewVideoController : NSObject
 @property (nonatomic, strong, readonly)AVPlayer *player;
@@ -40,5 +48,4 @@
 - (void)play;
 - (void)pause;
 - (void)replaceWithNewNetURL:(NSURL *)url;
-- (void)cancel;
 @end

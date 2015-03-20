@@ -8,7 +8,6 @@
 
 #import "LewVideoController.h"
 
-
 void *kCurrentItemDidChangeKVO  = &kCurrentItemDidChangeKVO;
 void *kStatusDidChangeKVO       = &kStatusDidChangeKVO;
 void *kLoadTimeRangesKVO        = &kLoadTimeRangesKVO;
@@ -41,7 +40,6 @@ void *kLoadTimeRangesKVO        = &kLoadTimeRangesKVO;
 
 @interface LewVideoController ()
 @property (nonatomic, strong)AVPlayer *player;
-@property (nonatomic, strong)AVPlayerLayer *playerLayer;
 @property (nonatomic, strong)id timeObserver;// 检测播放进度
 @property (nonatomic, assign)CMTime videoDuration;// 视频总时长
 @property (nonatomic, assign)CMTime playedItemTime; // 播放过的playerItem的时长
@@ -81,15 +79,6 @@ void *kLoadTimeRangesKVO        = &kLoadTimeRangesKVO;
     return self;
 }
 
-
-#pragma mark - getter/setter
-- (AVPlayerLayer *)playerLayer{
-    if (!_playerLayer && _player) {
-        _playerLayer = [AVPlayerLayer playerLayerWithPlayer:_player];
-        _playerLayer.videoGravity = AVLayerVideoGravityResizeAspect;
-    }
-    return _playerLayer;
-}
 #pragma mark - public method
 
 - (void)play{
@@ -100,10 +89,14 @@ void *kLoadTimeRangesKVO        = &kLoadTimeRangesKVO;
     [_player pause];
 }
 
+- (void)stop{
+    [self _unRegiseterPlayerItemKVO:_player.currentItem];
+}
+
 - (void)replaceWithNewNetURL:(NSURL *)url{
     [_player pause];
     _videoDuration = kCMTimeZero;
-
+    
     AVPlayerItem *playerItem = [AVPlayerItem playerItemWithURL:url];
     _videoDuration = playerItem.asset.duration;
     [_player replaceCurrentItemWithPlayerItem:playerItem];
@@ -114,23 +107,24 @@ void *kLoadTimeRangesKVO        = &kLoadTimeRangesKVO;
 }
 
 - (void)seekToTime:(CMTime)time completionHandler:(void (^)(BOOL))completionHandler{
+    NSLog(@"time value %@, time scale %@",@(time.value),@(time.timescale));
     [_player seekToTime:time completionHandler:completionHandler];
 }
 
 #pragma mark - init
 
-- (void)_playerItemDidChanged:(AVPlayerItem *)currentItem oldItem:(AVPlayerItem *)oldItem{
-    if (oldItem) {
-        [self _unRegiseterPlayerItemKVO:oldItem];
-    }
-    if (currentItem) {
-        [self _registerPlayerItemKVO:currentItem];
-    }
-}
+//- (void)_playerItemDidChanged:(AVPlayerItem *)currentItem oldItem:(AVPlayerItem *)oldItem{
+//    if (oldItem) {
+//        [self _unRegiseterPlayerItemKVO:oldItem];
+//    }
+//    if (currentItem) {
+//        [self _registerPlayerItemKVO:currentItem];
+//    }
+//}
 
 - (void)_registerPlayerItemKVO:(AVPlayerItem *)item{
-    [_player.currentItem addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:kStatusDidChangeKVO];// 视频加载状态
-    [_player.currentItem addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:kLoadTimeRangesKVO];// 监听loadedTimeRanges属性
+    [item addObserver:self forKeyPath:@"status" options:NSKeyValueObservingOptionNew context:kStatusDidChangeKVO];// 视频加载状态
+    [item addObserver:self forKeyPath:@"loadedTimeRanges" options:NSKeyValueObservingOptionNew context:kLoadTimeRangesKVO];// 监听loadedTimeRanges属性
 }
 
 - (void)_unRegiseterPlayerItemKVO:(AVPlayerItem *)item{
@@ -164,7 +158,9 @@ void *kLoadTimeRangesKVO        = &kLoadTimeRangesKVO;
 }
 
 - (void)playerItemDidPlayToEnd:(NSNotification *)nf{
-    
+    if (self.delegate && [self.delegate respondsToSelector:@selector(lewVideoDidPlayToEnd)]) {
+        [self.delegate lewVideoDidPlayToEnd];
+    }
 }
 #pragma mark - observer
 
@@ -173,7 +169,7 @@ void *kLoadTimeRangesKVO        = &kLoadTimeRangesKVO;
 //        AVPlayerItem *playerItem = (AVPlayerItem*)object;
         if (_player.status == AVPlayerStatusReadyToPlay) {
             //视频加载完成,去掉等待
-            if (_delegate) {
+            if (_delegate && [_delegate respondsToSelector:@selector(lewVideoReadyToPlay)]) {
                 [_delegate lewVideoReadyToPlay];
             }
         }
@@ -183,7 +179,7 @@ void *kLoadTimeRangesKVO        = &kLoadTimeRangesKVO;
         float startSeconds = CMTimeGetSeconds(timeRange.start);
         float durationSeconds = CMTimeGetSeconds(timeRange.duration);
         NSTimeInterval bufferTime = startSeconds + durationSeconds;// 计算缓冲总进度
-        if (_delegate) {
+        if (_delegate && [_delegate respondsToSelector:@selector(lewVideoLoadedProgress:)]) {
             [_delegate lewVideoLoadedProgress:(bufferTime/CMTimeGetSeconds(_videoDuration))];
         }
     }
@@ -201,6 +197,7 @@ void *kLoadTimeRangesKVO        = &kLoadTimeRangesKVO;
 - (void)dealloc{
     [self _unRegisterPlayerKVO];
     [self _unRegiseterPlayerItemKVO:_player.currentItem];
+    NSLog(@"video controller dealloc");
 }
 @end
 
@@ -221,11 +218,12 @@ void *kLoadTimeRangesKVO        = &kLoadTimeRangesKVO;
     return self;
 }
 
-- (void)playerItemDidPlayToEnd:(NSNotification *)nf{
-    if (self.delegate) {
-        [self.delegate lewVideoDidPlayToEnd];
-    }
-}
+//- (void)playerItemDidPlayToEnd:(NSNotification *)nf{
+//
+//    if (self.delegate && [self.delegate respondsToSelector:@selector(lewVideoDidPlayToEnd)]) {
+//        [self.delegate lewVideoDidPlayToEnd];
+//    }
+//}
 
 @end
 
@@ -265,7 +263,6 @@ void *kLoadTimeRangesKVO        = &kLoadTimeRangesKVO;
         [self.player play];
         [self _registerPlayerItemKVO:_playerItems[_indexOfPlayingItem]];
     }else{
-        [self _unRegiseterPlayerItemKVO:self.player.currentItem];
         if (self.delegate && [self.delegate respondsToSelector:@selector(lewVideoDidPlayToEnd)]) {
             [self.delegate lewVideoDidPlayToEnd];
         }
@@ -273,47 +270,25 @@ void *kLoadTimeRangesKVO        = &kLoadTimeRangesKVO;
 }
 
 - (void)seekToTime:(CMTime)time completionHandler:(void (^)(BOOL))completionHandler{
-    int32_t res =  CMTimeCompare(time, self.playedItemTime);
-    if (res<0) {// 后退
-        CMTime playedtime = self.playedItemTime;
-        CMTime subTime = CMTimeSubtract(playedtime, time);
-        for (NSInteger i = _indexOfPlayingItem-1; i>=0; i--) {
-            AVPlayerItem *item = _playerItems[i];
-            if (CMTimeCompare(subTime, item.duration) < 0) {
-                [self _unRegiseterPlayerItemKVO:self.player.currentItem];
-                [self.player replaceCurrentItemWithPlayerItem:item];
-                _indexOfPlayingItem = i;
-                NSLog(@"跳到item %ld, 时间 %lld",i,subTime.value);
-                [item seekToTime:subTime completionHandler:completionHandler];
-                [self _registerPlayerItemKVO:item];
-                self.playedItemTime = playedtime;
-                return;
-            }
-            playedtime = CMTimeSubtract(playedtime, item.duration);
-            subTime = CMTimeSubtract(subTime, item.duration);
+    CMTime addTime = kCMTimeZero;
+    [self _unRegiseterPlayerItemKVO:self.player.currentItem];
+    for (NSInteger i = 0; i<_playerItems.count; i++) {
+        AVPlayerItem *item = _playerItems[i];
+        addTime = CMTimeAdd(addTime, item.asset.duration);
+
+        int32_t res =  CMTimeCompare(time, addTime);
+        if (res<=0) {
+            self.playedItemTime = CMTimeSubtract(addTime, item.asset.duration);
+            CMTime subTime = CMTimeSubtract(time,self.playedItemTime);
+
+            [self.player replaceCurrentItemWithPlayerItem:item];
+            self.playedItemTime = CMTimeSubtract(addTime, item.asset.duration);
+
+            [item seekToTime:subTime completionHandler:completionHandler];
+            [self _registerPlayerItemKVO:item];
+            _indexOfPlayingItem = i;
+            break;
         }
-        NSLog(@"无法继续后退");
-    }else if(res>0){// 前进
-        CMTime playedtime = self.playedItemTime;
-        CMTime subTime = CMTimeSubtract(time,playedtime);
-        for (NSInteger i = _indexOfPlayingItem; i<_playerItems.count; i++) {
-            AVPlayerItem *item = _playerItems[i];
-            if (CMTimeCompare(subTime, item.duration) < 0) {
-                [self _unRegiseterPlayerItemKVO:self.player.currentItem];
-                [self.player replaceCurrentItemWithPlayerItem:item];
-                _indexOfPlayingItem = i;
-                NSLog(@"跳到item %ld, 时间 %lld",i,subTime.value);
-                [item seekToTime:subTime completionHandler:completionHandler];
-                [self _registerPlayerItemKVO:item];
-                self.playedItemTime = playedtime;
-                return;
-            }
-            playedtime = CMTimeAdd(playedtime, item.duration);
-            subTime = CMTimeSubtract(subTime, item.duration);
-        }
-        NSLog(@"无法继续前进");
-    }else{
-        [self.player.currentItem seekToTime:kCMTimeZero completionHandler:completionHandler];
     }
 }
 @end

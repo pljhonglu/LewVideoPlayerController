@@ -10,15 +10,25 @@
 #import <AVFoundation/AVFoundation.h>
 
 @protocol LewVideoControllerDelegate <NSObject>
-
-
+/**
+ *  播放进度
+ *
+ *  @param currentTime 播放进度
+ */
 - (void)LewVideoPlayingWithCurrentTime:(CMTime)currentTime;
-
-
+/**
+ *  缓冲完毕
+ */
 - (void)lewVideoReadyToPlay;
-
+/**
+ *  缓冲进度
+ *
+ *  @param progress 缓冲百分比 0.0-1.0
+ */
 - (void)lewVideoLoadedProgress:(CGFloat)progress;
-
+/**
+ *  播放结束
+ */
 - (void)lewVideoDidPlayToEnd;
 
 @end
@@ -30,7 +40,6 @@
 
 @interface LewVideoController : NSObject
 @property (nonatomic, strong, readonly)AVPlayer *player;
-@property (nonatomic, strong, readonly)AVPlayerLayer *playerLayer;
 
 @property (nonatomic, assign, readonly)CMTime videoDuration;
 
@@ -47,5 +56,7 @@
 
 - (void)play;
 - (void)pause;
+- (void)stop;
+
 - (void)replaceWithNewNetURL:(NSURL *)url;
 @end

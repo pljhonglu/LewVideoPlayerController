@@ -12,4 +12,6 @@
 - (instancetype)initWithNetURL:(NSURL *)url;
 
 - (instancetype)initWithLocalURLArray:(NSArray *)urlArray;
+
+
 @end

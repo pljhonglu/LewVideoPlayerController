@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LewVideoPlayerViewController">
@@ -18,12 +18,23 @@
             <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bov-KW-AQZ">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bov-KW-AQZ">
                     <rect key="frame" x="0.0" y="30" width="600" height="540"/>
-                    <color key="backgroundColor" red="1" green="0.80000001190000003" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </view>
                 <view alpha="0.69999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpA-uf-3VA">
                     <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzK-Mo-4Nk">
+                            <rect key="frame" x="8" y="0.0" width="46" height="30"/>
+                            <state key="normal" title="&lt; 返回">
+                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="goBackAction:" destination="-1" eventType="touchUpInside" id="Nfv-J6-gVJ"/>
+                            </connections>
+                        </button>
+                    </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="tkh-IA-aWm"/>
@@ -38,7 +49,7 @@
                                 <constraint firstAttribute="width" constant="46" id="EGQ-o6-3nX"/>
                                 <constraint firstAttribute="height" constant="30" id="wPF-T9-nnC"/>
                             </constraints>
-                            <state key="normal" title="暂停">
+                            <state key="normal" title="播放">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -52,13 +63,14 @@
                                 <constraint firstAttribute="height" constant="21" id="xXj-Jr-Ob4"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CaG-jx-wOL">
+                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="CaG-jx-wOL">
                             <rect key="frame" x="60" y="0.0" width="471" height="31"/>
                             <connections>
                                 <action selector="sliderMoveAction:" destination="-1" eventType="touchUpInside" id="HaA-3D-esw"/>
+                                <action selector="sliderStartToMoveAction:" destination="-1" eventType="touchDown" id="oDc-JV-UWz"/>
                             </connections>
                         </slider>
                     </subviews>
@@ -89,6 +101,7 @@
                 <constraint firstItem="tpA-uf-3VA" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="yNu-an-5Td"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
+            <point key="canvasLocation" x="116" y="45"/>
         </view>
     </objects>
 </document>

@@ -22,6 +22,8 @@
 
 @property (nonatomic, strong)LewVideoController *videoController;
 
+@property (nonatomic, strong)AVPlayerLayer *playerLayer;
+
 @property (nonatomic, assign)BOOL isPlaying;
 @end
 
@@ -30,14 +32,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    
-}
-
-- (void)viewWillAppear:(BOOL)animated{
-    [super viewWillAppear:animated];
-//    [self.videoView layoutIfNeeded];
-    _videoController.playerLayer.frame = CGRectMake(100, -60, 320, 568);
-
+    _playerLayer = [AVPlayerLayer playerLayerWithPlayer:_videoController.player];
+    _playerLayer.videoGravity = AVLayerVideoGravityResizeAspect;
+    [self.videoView.layer addSublayer:_playerLayer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,10 +42,8 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)awakeFromNib{
-    [super awakeFromNib];
-    
-    
+- (void)viewWillLayoutSubviews{
+    _playerLayer.frame = _videoView.bounds;
 }
 
 - (instancetype)initWithLocalURLArray:(NSArray *)urlArray{
@@ -57,7 +52,6 @@
         _urlArray = urlArray;
         _videoController = [LewVideoController videoControllerWithLocalURLArray:urlArray];
         _videoController.delegate = self;
-        [self.view.layer addSublayer:_videoController.playerLayer];
     }
     return self;
 }
@@ -67,7 +61,6 @@
     if (self) {
         _videoController = [LewVideoController videoControllerWithNetURL:url];
         _videoController.delegate = self;
-        [self.view.layer addSublayer:_videoController.playerLayer];
     }
     return self;
 }
@@ -81,41 +74,63 @@
 }
 */
 
+- (NSString *)timeStringWithCMTime:(CMTime)time{
+    NSInteger seconds = time.value/time.timescale;
+
+    NSInteger min = seconds/60;
+    
+    seconds -= min*60;
+    
+    return [NSString stringWithFormat:@"-%@:%02ld",@(min),seconds];
+}
 
 #pragma mark - action
+
+- (IBAction)goBackAction:(id)sender{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 - (IBAction)controlButtonAction:(id)sender{
     _isPlaying = !_isPlaying;
     if (_isPlaying) {
         [_videoController play];
+        [_controlButton setTitle:@"暂停" forState:UIControlStateNormal];
     }else{
         [_videoController pause];
+        [_controlButton setTitle:@"播放" forState:UIControlStateNormal];
     }
 }
-
 
 - (IBAction)sliderMoveAction:(id)sender{
     CGFloat value = _slider.value;
     CMTime duration = _videoController.videoDuration;
     duration.value = duration.value*value;
-    NSLog(@"拖拽  %lld, %d",duration.value,duration.timescale);
-//    CMTime time = CMTimeMake(duration.value*value, 10);
-//    time.flags = duration.flags;
-    [_videoController seekToTime:duration completionHandler:nil];
+    [_videoController seekToTime:duration completionHandler:^(BOOL finished) {
+        [_videoController play];
+    }];
+}
+
+static bool isMove = YES;
+- (IBAction)sliderStartToMoveAction:(id)sender{
+//    isMove = NO;
+    [_videoController pause];
+//    NSLog(@"start to move");
 }
 #pragma mark - delegate
 - (void)LewVideoPlayingWithCurrentTime:(CMTime)currentTime{
-    CGFloat progress = CMTimeGetSeconds(currentTime)/CMTimeGetSeconds(_videoController.videoDuration);
-
-    _slider.value = progress;
+//    if (isMove) {
+        CGFloat progress = CMTimeGetSeconds(currentTime)/CMTimeGetSeconds(_videoController.videoDuration);
+        _slider.value = progress;
+        CMTime time = CMTimeSubtract(_videoController.videoDuration, currentTime);
+        _timeLabel.text = [self timeStringWithCMTime:time];
+//    }
 }
-
 
 - (void)lewVideoReadyToPlay{
     NSLog(@"缓冲完毕");
 }
 
 - (void)lewVideoLoadedProgress:(CGFloat)progress{
-//    _progress.progress = progress;
+
 }
 
 - (void)lewVideoDidPlayToEnd{

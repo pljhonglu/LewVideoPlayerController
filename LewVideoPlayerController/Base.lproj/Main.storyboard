@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -17,79 +16,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PqL-P1-KZS">
-                                <rect key="frame" x="36" y="50" width="528" height="300"/>
-                                <color key="backgroundColor" red="0.87058823529999996" green="0.29803921570000003" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="Cj2-9N-d2U"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouP-8n-Bnv">
-                                <rect key="frame" x="70" y="410" width="46" height="30"/>
-                                <state key="normal" title="pause">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="pauseAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9N8-Ib-Wke"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KZy-wZ-ypu">
-                                <rect key="frame" x="158" y="410" width="88" height="30"/>
-                                <state key="normal" title="change url">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="changeURLAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XkH-hg-LXa"/>
-                                </connections>
-                            </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="V7L-3x-xeh">
-                                <rect key="frame" x="36" y="395" width="528" height="2"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="2" id="LqQ-O2-xwr"/>
-                                </constraints>
-                            </progressView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VxF-mN-SkG">
-                                <rect key="frame" x="184" y="20" width="99" height="30"/>
-                                <state key="normal" title="前进">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="seekToTimeAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Zik-Pk-cRY"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNA-KJ-qmh">
-                                <rect key="frame" x="-11" y="12" width="100" height="30"/>
-                                <state key="normal" title="新播放器">
+                                <rect key="frame" x="64" y="134" width="100" height="30"/>
+                                <state key="normal" title="本地视频">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="pushNewVideoController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ZTY-SW-Y38"/>
+                                    <action selector="playLocalVideoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XUI-50-ImL"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pGQ-zo-D3d">
-                                <rect key="frame" x="86" y="12" width="46" height="30"/>
-                                <state key="normal" title="play">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eyv-pw-A6T">
+                                <rect key="frame" x="84" y="180" width="60" height="30"/>
+                                <state key="normal" title="网络视频">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="playAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="0Si-iX-uj0"/>
+                                    <action selector="playNetVideoAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xvF-Rq-fHy"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="PqL-P1-KZS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="852-fa-65l"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="PqL-P1-KZS" secondAttribute="trailing" constant="20" id="L8z-9J-mXN"/>
-                            <constraint firstItem="V7L-3x-xeh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="MPq-wN-k6n"/>
-                            <constraint firstItem="PqL-P1-KZS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="30" id="diN-9o-CpB"/>
-                            <constraint firstItem="V7L-3x-xeh" firstAttribute="top" secondItem="PqL-P1-KZS" secondAttribute="bottom" constant="45" id="gKa-n5-VRQ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="V7L-3x-xeh" secondAttribute="trailing" constant="20" id="ryb-HK-jAu"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="progressView" destination="V7L-3x-xeh" id="cD6-O4-IIu"/>
-                        <outlet property="videoView" destination="PqL-P1-KZS" id="wa6-fV-pKA"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
